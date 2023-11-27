@@ -1,0 +1,3 @@
+#!/bin/bash
+PYCODE='print("Best School")'
+python3 -c "$PYCODE"
