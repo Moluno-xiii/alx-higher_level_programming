@@ -1,4 +1,4 @@
-#!/usr/bin/js
+#!/usr/bin/node
 
 module.exports = class Rectangle {
 	constructor (w, h) {
@@ -15,13 +15,12 @@ module.exports = class Rectangle {
 	}
 
 	rotate () {
-		this.width = h;
-		this.height = w;
+		[ this.width, this.height ] = [ this.height, this.width]
 	}
 
 	double () {
-		this.width = w * 2;
-		this.height = h * 2;
+		this.width *= 2;
+		this.height *= 2;
 	}
 
 };
