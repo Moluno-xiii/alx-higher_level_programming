@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const numOfTimes = -1;
+let numOfTimes = -1;
 
 exports.logMe = function (item) {
 	numOfTimes += 1;
