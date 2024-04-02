@@ -1,3 +1,2 @@
-#!/bin/python3
-PYCODE='print("Best School")'
+#!/bin/bash
 python3 -c "$PYCODE"
