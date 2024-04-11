@@ -1,5 +1,7 @@
 #!/usr/bin/python
 """ create function to add numbers """
+
+
 def add_integer(a, b=98):
     """ adds two numbers togther """
     if type(a) != int:
