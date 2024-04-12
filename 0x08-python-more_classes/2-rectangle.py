@@ -1,52 +1,70 @@
 #!/usr/bin/python3
-""" Defines a Rectangle class """
+"""This program define a class Rectangle with private attributes and methods"""
 
 
-class Rectangle:
-    """ Class with setter and getter """
+class Rectangle():
+    """
+    A Rectangle Class with the private instance attributes width and height
+    and public methods
+    """
+
     def __init__(self, width=0, height=0):
-        """ Init method """
-        self.__height = height
-        self.__width = width
+        """
+        Constructor of the class Rectangle
+          Args:
+            - width (default = 0): int
+            - heigth (default = 0): int
+        """
+        self.height = height
+        self.width = width
+
+    def area(self):
+        """Calculate the area of a Rectangle"""
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """Get the perimeter of a Rectangle"""
+        if (self.__width == 0 or self.__height == 0):
+            return 0
+
+        return (self.__width * 2) + (self.__height * 2)
 
     @property
     def width(self):
-        """ Width Getter """
+        """Getter of the property width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ Width setter """
-        if type(value) != int:
-            raise TypeError("width must be an integer")
-        elif value < 0:
-            raise ValueError("width must be >= 0")
-        else:
-            self.__width = value
+        """
+        Getter of the property value
+          Args:
+            - value: int
+        """
+        if not isinstance(value, int):
+            raise TypeError('width must be an integer')
+
+        if value < 0:
+            raise ValueError('width must be >= 0')
+
+        self.__width = value
 
     @property
     def height(self):
-        """ Height Getter """
-        return self.__heigt
+        """Getter of the property height"""
+        return self.__height
 
     @height.setter
     def height(self, value):
-        """ Height setter """
+        """
+        Getter of the property value
+          Args:
+            - value: int
+        """
         if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        elif value < 0:
-            raise ValueError("height must be >= 0")
-        else:
-            self.__height = value
+            raise TypeError('height must be an integer')
 
-    def area(self):
-        area = int(self.__width) * int(self.__height)
-        return area
+        if value < 0:
+            raise ValueError('height must be >= 0')
 
-    def perimeter(self):
-        if self.__height == 0 or self.__width == 0:
-            perimeter = 0
-            return perimeter
-        else:
-            perimeter = 2 * (int(self.__width) + int(self.__height))
-            return perimeter
+        self.__height = value
