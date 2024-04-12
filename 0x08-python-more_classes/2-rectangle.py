@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Defines a class Rectangle """
+""" Defines a Rectangle class """
 
 
 class Rectangle:
@@ -38,3 +38,15 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
+
+    def area(self):
+        area = int(self.__width) * int(self.__height)
+        return area
+
+    def perimeter(self):
+        if self.__height == 0 or self.__width == 0:
+            perimeter = 0
+            return perimeter
+        else:
+            perimeter = 2 * (int(self.__width) + int(self.__height))
+            return perimeter
